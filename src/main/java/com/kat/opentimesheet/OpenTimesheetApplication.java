@@ -9,4 +9,5 @@ public class OpenTimesheetApplication {
     public static void main(String[] args) {
         SpringApplication.run(OpenTimesheetApplication.class, args);
     }
+
 }

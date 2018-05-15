@@ -15,6 +15,10 @@ public class HomeController {
         currentPage = "/admin/login.xhtml";
     }
 
+    public void checkAuthenicate(){
+
+    }
+
     public String getCurrentPage() {
         return currentPage;
     }

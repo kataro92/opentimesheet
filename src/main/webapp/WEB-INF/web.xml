@@ -4,6 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <welcome-file-list>
-        <welcome-file>index.xhtml</welcome-file>
+        <welcome-file>/home</welcome-file>
     </welcome-file-list>
+    <!-- PrettyFaces: Specify which package to scan for @UrlMapping annotations -->
+    <context-param>
+        <param-name>com.ocpsoft.pretty.BASE_PACKAGES</param-name>
+        <param-value>com.kat.opentimesheet.controller</param-value>
+    </context-param>
 </web-app>
