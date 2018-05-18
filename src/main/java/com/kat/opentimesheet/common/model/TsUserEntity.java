@@ -9,6 +9,7 @@ public class TsUserEntity {
     private int userId;
     private String userName;
     private String password;
+    private int userType;
 
     @Id
     @Column(name = "user_id")
@@ -38,6 +39,16 @@ public class TsUserEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Basic
+    @Column(name = "user_type")
+    public int getUserType() {
+        return userType;
+    }
+
+    public void setUserType(int userType) {
+        this.userType = userType;
     }
 
     @Override

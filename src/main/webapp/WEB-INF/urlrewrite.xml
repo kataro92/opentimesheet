@@ -1,0 +1,27 @@
+<!--
+    Configuration file for UrlRewriteFilter
+    http://www.tuckey.org/urlrewrite/
+-->
+<urlrewrite>
+    <rule>
+        <note>
+            Homepage
+        </note>
+        <from>/home</from>
+        <to>/index.xhtml</to>
+    </rule>
+    <rule>
+        <note>
+            Login page
+        </note>
+        <from>/login</from>
+        <to>/pages/admin/login.xhtml</to>
+    </rule>
+    <rule>
+        <note>
+            Layouts
+        </note>
+        <from>/layouts/(.*)</from>
+        <to>/layouts/$1</to>
+    </rule>
+</urlrewrite>
