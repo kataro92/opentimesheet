@@ -11,6 +11,14 @@
     <name>open-timesheet</name>
     <description>An Open source timesheet, base on spring and prime-faces, thanks to joinfaces</description>
 
+    <repositories>
+        <repository>
+            <id>primefaces-maven-repository</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+        </repository>
+    </repositories>
+
     <parent>
         <groupId>org.joinfaces</groupId>
         <artifactId>joinfaces-parent</artifactId>
@@ -29,7 +37,13 @@
         <!-- joinfaces -->
         <dependency>
             <groupId>org.joinfaces</groupId>
-            <artifactId>primefaces-spring-boot-starter</artifactId>
+            <artifactId>jsf-spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.joinfaces</groupId>
+                    <artifactId>omnifaces1-spring-boot-starter</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
@@ -42,11 +56,29 @@
             <artifactId>jsr250-api</artifactId>
             <version>1.0</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.tuckey</groupId>-->
+            <!--<artifactId>urlrewritefilter</artifactId>-->
+            <!--<version>4.0.3</version>-->
+        <!--</dependency>-->
+        <!-- for JSF 2.x -->
         <dependency>
-            <groupId>org.tuckey</groupId>
-            <artifactId>urlrewritefilter</artifactId>
-            <version>4.0.3</version>
+            <groupId>org.ocpsoft.rewrite</groupId>
+            <artifactId>rewrite-servlet</artifactId>
+            <version>3.4.1.Final</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.ocpsoft.rewrite</groupId>-->
+            <!--<artifactId>rewrite-config-prettyfaces</artifactId>-->
+            <!--<version>3.4.1.Final</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.ocpsoft.rewrite/rewrite-integration-gwt -->
+        <dependency>
+            <groupId>org.ocpsoft.rewrite</groupId>
+            <artifactId>rewrite-integration-gwt</artifactId>
+            <version>3.4.1.Final</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
@@ -77,6 +109,30 @@
             <version>5.2.11.Final</version>
             <scope>provided</scope>
         </dependency>
+        <!-- primefaces -->
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.primefaces.extensions/primefaces-extensions -->
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>primefaces-extensions</artifactId>
+            <version>6.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

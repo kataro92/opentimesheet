@@ -3,23 +3,24 @@ package com.kat.opentimesheet.controller;
 import com.kat.opentimesheet.service.interfaces.AuthorityService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.ManagedBean;
+import javax.faces.annotation.ManagedProperty;
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.ConversationScoped;
 import java.io.IOException;
+import java.io.Serializable;
 
-@ViewScoped
-@ManagedBean("home")
-public class HomeController {
+@Named("home")
+@ConversationScoped
+public class HomeController implements Serializable {
     private String currentPage;
     private String currentTemplate;
 
-    @Autowired
-    AuthorityController authorityController;
+    @Inject AuthorityController authorityController;
 
-    @Autowired
-    AuthorityService authorityService;
+    @Autowired AuthorityService authorityService;
 
     @PostConstruct
     private void init(){
@@ -27,6 +28,14 @@ public class HomeController {
     }
 
     public void checkAuthenicate() throws IOException {
+        if(authorityController.getLoggedUser() == null){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/login");
+        }else{
+            currentPage = "/pages/dashboard.xhtml";
+        }
+    }
+
+    public void checkLoggedAuthenicate() throws IOException {
         if(authorityController.getLoggedUser() == null){
             FacesContext.getCurrentInstance().getExternalContext().redirect("/login");
         }

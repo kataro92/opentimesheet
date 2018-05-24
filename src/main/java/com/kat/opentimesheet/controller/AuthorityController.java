@@ -1,14 +1,17 @@
 package com.kat.opentimesheet.controller;
 
-
 import com.kat.opentimesheet.common.model.LoggedUser;
-import org.springframework.web.context.annotation.SessionScope;
 
-import javax.annotation.ManagedBean;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import java.io.Serializable;
 
-@SessionScope
-@ManagedBean("authority")
-public class AuthorityController {
+@Named("authority")
+@SessionScoped
+public class AuthorityController implements Serializable {
+
+    public AuthorityController(){}
+
     private LoggedUser loggedUser;
 
     public LoggedUser getLoggedUser() {

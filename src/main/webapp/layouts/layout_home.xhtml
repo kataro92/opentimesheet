@@ -10,16 +10,22 @@
 <h:body>
     <div id="wrapper">
         <div id="header">
+            #{home.checkLoggedAuthenicate()}
             <ui:insert name="header" >
                 <ui:include src="#{home.currentTemplate}/header.xhtml" />
             </ui:insert>
         </div>
-        <div id="content">
-            <h:form>
+        <h:form>
+            <div id="navbar">
+                <ui:insert name="navbar" >
+                    <ui:include src="#{home.currentTemplate}/navbar.xhtml" />
+                </ui:insert>
+            </div>
+            <div id="content">
                 <ui:insert name="content" >
                 </ui:insert>
-            </h:form>
-        </div>
+            </div>
+        </h:form>
         <div id="footer">
             <ui:insert name="footer" >
                 <ui:include src="#{home.currentTemplate}/footer.xhtml" />
