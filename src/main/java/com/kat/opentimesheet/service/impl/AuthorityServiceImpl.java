@@ -1,7 +1,7 @@
 package com.kat.opentimesheet.service.impl;
 
 import com.kat.opentimesheet.common.constant.UserTypeConst;
-import com.kat.opentimesheet.common.model.LoggedUser;
+import com.kat.opentimesheet.common.dto.LoggedUser;
 import com.kat.opentimesheet.common.model.TsUserEntity;
 import com.kat.opentimesheet.common.util.PasswordUtil;
 import com.kat.opentimesheet.repository.interfaces.UserRepo;
@@ -24,9 +24,6 @@ public class AuthorityServiceImpl implements AuthorityService {
             loggedUser.setUserId(userByUsernameAndPassword.getUserId());
             if(userByUsernameAndPassword.getUserType() == UserTypeConst.ADMIN || userByUsernameAndPassword.getUserType() == UserTypeConst.NORMAL){
                 loggedUser.setUserType(userByUsernameAndPassword.getUserType());
-            }
-            if(userByUsernameAndPassword.getUserType() == UserTypeConst.NORMAL){
-
             }
             return loggedUser;
         }

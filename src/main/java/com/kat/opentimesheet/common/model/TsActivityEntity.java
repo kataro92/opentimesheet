@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "activity", schema = "public", catalog = "open_timesheet")
-public class ActivityEntity {
+@Table(name = "ts_activity", schema = "public", catalog = "open_timesheet")
+public class TsActivityEntity {
     private int activityId;
     private String activityName;
     private int leaveOrWork;
@@ -44,7 +44,7 @@ public class ActivityEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ActivityEntity that = (ActivityEntity) o;
+        TsActivityEntity that = (TsActivityEntity) o;
         return activityId == that.activityId &&
                 leaveOrWork == that.leaveOrWork &&
                 Objects.equals(activityName, that.activityName);

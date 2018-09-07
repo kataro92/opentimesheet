@@ -1,43 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+<html xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui" xmlns:h="http://xmlns.jcp.org/jsf/html">
 <f:view>
     <p:menubar>
-        <p:submenu label="File" icon="ui-icon-document">
-            <p:submenu label="New" icon="ui-icon-contact">
-                <p:menuitem value="Project" url="#" />
-                <p:menuitem value="Other" url="#" />
+        <p:menuitem icon="ico-logo" value=" " url="#{request.contextPath}/home"/>
+        <p:submenu label="System">
+            <p:submenu label="Appearance">
+                <p:menuitem value="Homepage" url="#" />
+                <p:menuitem value="Navbar" url="#" />
+                <p:menuitem value="Theme" url="#" />
+                <p:menuitem value="Language" url="#" />
             </p:submenu>
-            <p:menuitem value="Open" url="#" />
+            <p:menuitem value="Setting" url="#" />
+            <p:submenu label="Maintaince">
+                <p:menuitem value="Backup" url="#" />
+                <p:menuitem value="Restore" url="#" />
+                <p:menuitem value="Maintaince schedule" url="#" />
+                <p:menuitem value="Warning" url="#" />
+            </p:submenu>
+        </p:submenu>
+
+        <p:submenu label="Organization">
+            <p:menuitem value="Company" url="#"/>
+            <p:menuitem value="Department" url="#"/>
+            <p:menuitem value="Employee" url="#"/>
             <p:separator />
-            <p:menuitem value="Quit" url="#" />
+            <p:menuitem value="Club" url="#"/>
         </p:submenu>
 
-        <p:submenu label="Edit" icon="ui-icon-pencil">
-            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+        <p:submenu label="Management">
+            <p:menuitem value="Project" url="#"/>
+            <p:menuitem value="Resource" url="#"/>
+            <p:menuitem value="Common task" url="#"/>
+            <p:separator />
+            <p:menuitem value="Timesheet" url="#"/>
         </p:submenu>
 
-        <p:submenu label="Help" icon="ui-icon-help">
-            <p:menuitem value="Contents" url="#" />
-            <p:submenu label="Search" icon="ui-icon-search">
-                <p:submenu label="Text">
-                    <p:menuitem value="Workspace" url="#" />
-                </p:submenu>
-                <p:menuitem value="File" url="#" />
+        <p:submenu label="Scheduler">
+            <p:menuitem value="Working time" url="#"/>
+            <p:menuitem value="Overtime" url="#"/>
+            <p:separator />
+            <p:menuitem value="Holiday" url="#"/>
+            <p:menuitem value="Incident" url="#"/>
+        </p:submenu>
+
+        <p:submenu label="Individual">
+            <p:menuitem value="Application for leave" url="#"/>
+            <p:menuitem value="Application for overtime" url="#"/>
+            <p:menuitem value="Application for checkout" url="#"/>
+        </p:submenu>
+
+        <p:submenu label="Report">
+            <p:submenu label="Overview">
+                <p:menuitem value="Performance" url="#"/>
+                <p:menuitem value="Project" url="#"/>
+                <p:menuitem value="Timesheet" url="#"/>
+                <p:menuitem value="Churn" url="#"/>
+            </p:submenu>
+            <p:submenu label="Detail">
             </p:submenu>
         </p:submenu>
 
-        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
+        <p:submenu label="Help">
+            <p:menuitem value="How to use" url="#" />
+            <p:menuitem value="Github project" url="https://github.com/kataro92/opentimesheet" />
+            <p:menuitem value="About openTimesheet" url="#" />
+        </p:submenu>
 
         <f:facet name="options">
-            <p:inputText style="margin-right:10px" placeholder="Search"/>
-            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+            <p:selectOneMenu style="margin-right:10px">
+                <f:selectItem itemLabel="Default" itemValue="default"/>
+                <f:selectItem itemLabel="English" itemValue="en-US"/>
+                <f:selectItem itemLabel="Vietnames" itemValue="vi-VN"/>
+            </p:selectOneMenu>
+            <p:commandButton type="button" value="Logout"/>
         </f:facet>
     </p:menubar>
 </f:view>

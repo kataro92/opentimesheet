@@ -1,6 +1,6 @@
 package com.kat.opentimesheet.controller;
 
-import com.kat.opentimesheet.common.model.LoggedUser;
+import com.kat.opentimesheet.common.dto.LoggedUser;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;

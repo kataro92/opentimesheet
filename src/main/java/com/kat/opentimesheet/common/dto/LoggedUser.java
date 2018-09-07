@@ -1,4 +1,4 @@
-package com.kat.opentimesheet.common.model;
+package com.kat.opentimesheet.common.dto;
 
 import java.io.Serializable;
 

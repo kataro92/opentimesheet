@@ -1,0 +1,4 @@
+.ico-logo {
+    background-image: url("#{resource['images/ico-logo.png']}") !important;
+    background-size: 16px;
+}
